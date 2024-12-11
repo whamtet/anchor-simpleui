@@ -3,6 +3,7 @@
    [simpleui.anchor.web.middleware.exception :as exception]
    [simpleui.anchor.web.middleware.formats :as formats]
    [simpleui.anchor.web.views.home :as home]
+   [simpleui.anchor.web.views.model :as model]
    [integrant.core :as ig]
    [reitit.ring.middleware.muuntaja :as muuntaja]
    [reitit.ring.middleware.parameters :as parameters]))
@@ -23,7 +24,6 @@
 (derive :reitit.routes/ui :reitit/routes)
 
 (defmethod ig/init-key :reitit.routes/ui
-  [_ {:keys [base-path]
-      :or   {base-path ""}
-      :as   opts}]
-  [base-path (route-data opts) (home/ui-routes base-path)])
+  [_ opts]
+  [["" (route-data opts) (home/ui-routes opts)]
+   ["/model" (route-data opts) (model/ui-routes opts)]])
