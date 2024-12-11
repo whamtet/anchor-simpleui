@@ -33,7 +33,7 @@
    [:head
     [:meta {:charset "UTF-8"}]
     [:title (i18n "Anchor")]
-    [:link {:rel "icon" :href "/logo_dark.svg"}]
+    [:link {:rel "icon" :href "/anchor.svg"}]
     (for [sheet css]
       [:link {:rel "stylesheet" :href (resource-cache/cache-suffix sheet)}])]
    [:body

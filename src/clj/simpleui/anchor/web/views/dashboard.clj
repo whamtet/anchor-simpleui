@@ -35,8 +35,10 @@
 (defcomponent dashboard [req]
   (let []
     [:div.min-h-screen.p-2 {:_ "on click add .hidden to .drop"}
+     [:a.absolute.top-2.left-2 {:href ""}
+      [:img.w-12.opacity-70 {:src "/anchor.svg"}]]
      ;; dropdown
      (main-dropdown)
-     [:div.flex.p-3.space-x-4
+     [:div.flex.p-3.space-x-4.mt-14
       (profile-panel)]
      (lang/lang-dropup req)]))
