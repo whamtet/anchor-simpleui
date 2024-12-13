@@ -18,12 +18,14 @@
  luminus-transit/luminus-transit {:mvn/version "0.1.6"
                                   :exclusions [com.cognitect/transit-clj]}
  metosin/muuntaja {:mvn/version "0.6.8"}
+ org.openjdk.nashorn/nashorn-core {:mvn/version "15.4"}
 
            ;; kit Libs
  io.github.kit-clj/kit-core {:mvn/version "1.0.9"}
  io.github.kit-clj/kit-undertow {:mvn/version "1.0.7"}
  simpleui/simpleui {:git/url "https://github.com/whamtet/simpleui",
                     :git/sha "e579acffd6dc16fc43916dbba54e2aa009efb3ac"}}
+ ;; no deps here - look at the double braces a line above!
  :aliases {:build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}}
                    :ns-default build}
 
