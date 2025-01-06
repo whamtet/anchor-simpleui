@@ -2,6 +2,7 @@
   (:require
     [simpleui.anchor.i18n :refer [i18n]]
     [simpleui.anchor.web.htmx :refer [defcomponent]]
+    [simpleui.anchor.web.middleware.i18n :as middleware.i18n]
     [simpleui.anchor.web.views.components :as components]
     [simpleui.anchor.web.views.components.dropdown :as dropdown]
     [simpleui.anchor.web.controllers.login :as controllers.login]))
@@ -24,5 +25,5 @@
     (controllers.login/assoc-lang (:session req) new-lang)
     [:div.absolute.bottom-0.flex.w-full.justify-center
      (dropup
-      (lang-disp lang)
-      (dissoc lang-disp lang))]))
+      (lang-disp middleware.i18n/*lang*)
+      (dissoc lang-disp middleware.i18n/*lang*))]))
